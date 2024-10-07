@@ -7,7 +7,6 @@ import flask, flask_wtf
 print("- Flask:", flask.__version__)
 print("- Flask WTF:", flask_wtf.__version__)
 
-
 IMAGES, MASKS, CLASSES, UNIQUE_CLASSES, FILES = [], [], [], [], []
 CURRENT_TIMESTAMP = int(time.time())
 CURRENT_DATE = f"{time.strftime('%Y-%m-%d', time.localtime(CURRENT_TIMESTAMP))}"
@@ -691,6 +690,9 @@ def featuresNavigation():
   featuresFolders = [f for f in featuresFolders if os.path.isdir(os.path.join(featuresPath, f))]
   featuresFolders = sorted(featuresFolders)
 
+  markersImage = Image2Base64("static/images/Markers.jpg").decode("utf-8")
+  markersExtractionImage = Image2Base64("static/images/Markers Extraction.jpg").decode("utf-8")
+
   featuresContent = []
   for folder in featuresFolders:
     folderPath = os.path.join(featuresPath, folder, "Features.csv")
@@ -747,6 +749,8 @@ def featuresNavigation():
   return render_template(
     "features_navigation.html",
     featuresContent=featuresContent,
+    markersImage=markersImage,
+    markersExtractionImage=markersExtractionImage,
   )
 
 
@@ -1641,13 +1645,94 @@ def classification():
     )
 
 
+@app.route("/classification-navigation", methods=["GET"])
+def classificationNavigation():
+  classificationPath = app.config["CLASSIFICATION_FOLDER"]
+  classificationImage = Image2Base64("static/images/Classification.jpg").decode("utf-8")
+
+  folders = os.listdir(classificationPath)
+  folders = [f for f in folders if os.path.isdir(os.path.join(classificationPath, f))]
+  folders = sorted(folders)
+
+  allFolders = {}
+  for folder in folders:
+    allFolders[folder] = {}
+    innerFolders = os.listdir(os.path.join(classificationPath, folder))
+    innerFolders = [f for f in innerFolders if os.path.isdir(os.path.join(classificationPath, folder, f))]
+    innerFolders = sorted(innerFolders)
+    for innerFolder in innerFolders:
+      configPath = os.path.join(classificationPath, folder, innerFolder, "Configurations.pickle")
+      if (not os.path.exists(configPath)):
+        continue
+      with open(configPath, "rb") as f:
+        configurations = pickle.load(f)
+
+      fst1im = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "First_Stage_Top1_Individual_Metrics.csv"))
+      ssut1im = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "Second_Stage_Up_Top1_Individual_Metrics.csv"))
+      ssdt1im = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "Second_Stage_Down_Top1_Individual_Metrics.csv"))
+
+      fst1t1cm = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "First_Stage_Top1_Top1_Combinations_Metrics.csv"))
+      ssut1t1cm = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "Second_Stage_Up_Top1_Top1_Combinations_Metrics.csv"))
+      ssdt1t1cm = pd.read_csv(
+        os.path.join(classificationPath, folder, innerFolder, "Second_Stage_Down_Top1_Top1_Combinations_Metrics.csv"))
+
+      fr = pd.read_csv(os.path.join(classificationPath, folder, innerFolder, "Final_Results.csv"))
+      frCols = list(fr.columns)
+      frCols = frCols[17:] + frCols[:10] + ["AUC_Mean"] + ["Mean_Score"] + frCols[10:15]
+      fr = fr[frCols]
+
+      allFolders[folder][innerFolder] = {
+        "Configurations"                                : {
+          "Features File"        : configurations["Features File"],
+          "Train to Test Ratio"  : configurations["Train to Test Ratio"] + "%",
+          # "Test Ratio"           : configurations["Test Ratio"],
+          "Outliers Detection"   : "Yes" if (configurations["Outliers Detection"] == "1") else "No",
+          "Outliers Fraction"    : configurations["Outliers Fraction"] + "%" if (
+            configurations["Outliers Detection"] == "1") else "N/A",
+          "Features Selection"   : "Yes" if (configurations["Features Selection"] == "1") else "No",
+          "Correlation Threshold": configurations["Correlation Threshold"] + "%" if (
+            configurations["Features Selection"] == "1") else "N/A",
+          "Scalers"              : configurations["Scalers"],
+          # "Scalers List"         : configurations["Scalers List"],
+          "Classifiers"          : configurations["Classifiers"],
+          # "Classifiers List"     : configurations["Classifiers List"],
+          "Number of Trials"     : configurations["Number of Trials"],
+        },
+        "First_Stage_Individual_Metrics"                : fst1im.values.tolist(),
+        "First_Stage_Individual_Metrics_Columns"        : list(fst1im.columns),
+        "Second_Stage_Up_Individual_Metrics"            : ssut1im.values.tolist(),
+        "Second_Stage_Up_Individual_Metrics_Columns"    : list(ssut1im.columns),
+        "Second_Stage_Down_Individual_Metrics"          : ssdt1im.values.tolist(),
+        "Second_Stage_Down_Individual_Metrics_Columns"  : list(ssdt1im.columns),
+        "First_Stage_Combinations_Metrics"              : fst1t1cm.values.tolist(),
+        "First_Stage_Combinations_Metrics_Columns"      : list(fst1t1cm.columns),
+        "Second_Stage_Up_Combinations_Metrics"          : ssut1t1cm.values.tolist(),
+        "Second_Stage_Up_Combinations_Metrics_Columns"  : list(ssut1t1cm.columns),
+        "Second_Stage_Down_Combinations_Metrics"        : ssdt1t1cm.values.tolist(),
+        "Second_Stage_Down_Combinations_Metrics_Columns": list(ssdt1t1cm.columns),
+        "Final_Results"                                 : fr.values.tolist(),
+        "Final_Results_Columns"                         : list(fr.columns),
+      }
+
+  return render_template(
+    "classification_navigation.html",
+    classificationImage=classificationImage,
+    allFolders=allFolders,
+  )
+
+
 if (__name__ == "__main__"):
   app.run(
     debug=True,
     threaded=True,
     port=5000,
     host="",
-    use_reloader=False,
-    use_evalex=False,
-    use_debugger=False,
+    # use_reloader=False,
+    # use_evalex=False,
+    # use_debugger=False,
   )

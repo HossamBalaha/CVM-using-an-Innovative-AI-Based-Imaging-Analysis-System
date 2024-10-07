@@ -19,29 +19,50 @@
 
           <hr>
 
-          <p class="text-left">
-            Markers extraction in image processing involves analyzing contour-based and texture-based features to
-            gain
-            insights into object shapes and patterns. Contours represent the boundaries of objects, and various
-            markers
-            like perimeter, area, centroid, aspect ratio, and solidity describe their shape, size, and compactness.
-            Radial distance and convexity help detect shape symmetry and deviations from convex forms, while
-            compactness
-            evaluates the roundness of an object.
-          </p>
-          <p class="text-left">
-            In texture analysis, first-order markers, such as mean, variance,
-            and
-            skewness, focus on pixel intensity statistics, whereas second-order markers like GLCM (Gray-Level
-            Co-occurrence Matrix) and GLRLM (Gray-Level Run-Length Matrix) account for spatial relationships between
-            pixels, revealing patterns and repetitions in textures.
-          </p>
-          <p class="text-left">
-            These markers are vital for applications such as
-            object recognition, shape matching, and segmentation, providing both geometric and textural information
-            essential for comprehensive image analysis.
-          </p>
-
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <p class="text-center h5">
+                Introduction
+              </p>
+              <hr>
+              <p class="text-left">
+                Markers extraction in image processing involves analyzing contour-based and texture-based features to
+                gain
+                insights into object shapes and patterns. Contours represent the boundaries of objects, and various
+                markers
+                like perimeter, area, centroid, aspect ratio, and solidity describe their shape, size, and compactness.
+                Radial distance and convexity help detect shape symmetry and deviations from convex forms, while
+                compactness
+                evaluates the roundness of an object.
+              </p>
+              <p class="text-left">
+                In texture analysis, first-order markers, such as mean, variance,
+                and
+                skewness, focus on pixel intensity statistics, whereas second-order markers like GLCM (Gray-Level
+                Co-occurrence Matrix) and GLRLM (Gray-Level Run-Length Matrix) account for spatial relationships between
+                pixels, revealing patterns and repetitions in textures.
+              </p>
+              <p class="text-left">
+                These markers are vital for applications such as
+                object recognition, shape matching, and segmentation, providing both geometric and textural information
+                essential for comprehensive image analysis.
+              </p>
+            </div>
+            <div class="col-12 col-lg-4 mt-lg-0 mt-3">
+              <div class="text-center">
+                <img src="data:image/jpg;base64,{{markersExtractionImage}}"
+                     class="img-fluid rounded shadow border border-success w-50 p-2 bg-white"
+                     alt="Markers Extraction Preview">
+              </div>
+            </div>
+            <div class="col-12 mt-3">
+              <div class="text-center">
+                <img src="data:image/jpg;base64,{{markersImage}}"
+                     class="img-fluid rounded shadow border border-success w-75 p-2 bg-white"
+                     alt="Markers Preview">
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="card-body">

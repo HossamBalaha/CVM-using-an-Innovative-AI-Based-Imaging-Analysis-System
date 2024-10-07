@@ -65,27 +65,44 @@ like numerical computation, data manipulation, machine learning, and image proce
   models and integrating them into web-based platforms for easy access and interaction.
 * Flask-WTF: An extension for Flask that simplifies the integration of web forms in Flask applications. It provides
   utilities for form validation, CSRF protection, and other form-related tasks.
+* Lime: A library for explaining machine learning models through local interpretable model-agnostic explanations. It
+  helps understand the predictions of complex models by providing insights into the importance of features for
+  individual instances.
+* Seaborn: A data visualization library built on top of Matplotlib that provides a high-level interface for creating
+  attractive and informative statistical graphics. It simplifies the process of creating complex plots and visualizing
+  relationships in data.
+* PyOD: A library for detecting outliers in data using various anomaly detection algorithms. It provides tools for
+  identifying anomalies in univariate, multivariate, and time-series data, which can be useful for quality control and
+  fraud detection.
+* Pythresh: A comprehensive and scalable Python library for thresholding outlier detection likelihood scores in
+  univariate/multivariate data. It provides a wide range of thresholding methods and evaluation metrics for anomaly
+  detection tasks.
 
 ### Installation
 
-To install the required libraries, you can use the following command:
+Current version of the project is tested on Python 3.9.17. To install the required Python libraries, you can use the
+following commands:
 
 ```
 pip install numpy==1.26.4
 pip install pandas==1.5.3
-pip install scikit-learn==1.4.1.post1
+pip install scikit-learn==1.4.*
 pip install scikit-image==0.21.0
 pip install matplotlib==3.8.3
 pip install scipy==1.12.0
 pip install pydicom==2.4.2
 pip install imutils==0.5.4
-pip install opencv-python==4.10.0
+pip install opencv-python==4.10.*
 pip install lightgbm==4.1.0
 pip install xgboost==2.0.0
-pip install catboost==1.2.1.1.16484
+pip install catboost==1.2.*
 pip install mahotas==1.4.13
 pip install flask==3.0.3
 pip install flask_wtf==1.2.1
+pip install lime==0.2.*
+pip install seaborn==0.13.2
+pip install pyod==2.0.2
+pip install pythresh==0.3.7
 ```
 
 ## Citations
