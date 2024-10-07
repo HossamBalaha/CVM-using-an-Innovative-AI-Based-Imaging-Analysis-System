@@ -1,0 +1,367 @@
+{% extends "base.layout.html" %}
+{% block body %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow rounded">
+        <div class="card-header">
+          <h5 class="text-center h3 py-2">
+            Classification Phase
+          </h5>
+
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 bg-light">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Classification</li>
+            </ol>
+          </nav>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-12">
+              <p class="text-left">
+                Outliers, also known as anomalies, are data points that exhibit significant deviations from the rest of
+                the dataset. The significance of outliers detection lies in its ability to mitigate the impact of
+                inter-observer and intra-observer variability on data analysis and interpretation.
+              </p>
+
+              <p class="text-left">
+                Inter-observer
+                variability, stemming from differences in observations among different individuals, and intra-observer
+                variability, reflecting variations in observations made by the same individual over time, can both
+                introduce discrepancies in identifying outliers.
+              </p>
+
+              <p class="text-left">
+                By employing robust outlier detection techniques, we can identify and address these discrepancies,
+                ensuring that data points deviating significantly from the majority are appropriately accounted for.
+                This process not only enhances the reliability and reproducibility of research findings but also reduces
+                the influence of subjective interpretations on analysis results.
+                We utilize various outlier detection methods, each tailored to identify anomalies within our dataset.
+              </p>
+
+              <p class="text-left">
+                We utilized feature selection techniques to enhance the efficiency and interpretability of our models.
+                One
+                crucial aspect of feature selection is identifying collinear features, which are highly correlated with
+                each other. Collinear features can introduce redundancy into the model, leading to overfitting and
+                decreased generalization performance.
+              </p>
+
+              <p class="text-left">
+                To address this issue, we employed a method to find collinear features based on the correlation
+                coefficient between features. The correlation coefficient measures the strength and direction of a
+                linear
+                relationship between two variables, ranging from -1 to 1. A correlation coefficient close to 1 indicates
+                a
+                strong positive linear relationship, while a coefficient close to -1 indicates a strong negative linear
+                relationship. A coefficient close to 0 suggests little to no linear relationship.
+              </p>
+
+            </div>
+            <div class="col-12 my-3">
+              <div class="text-center">
+                <img src="data:image/jpg;base64,{{classificationImage}}"
+                     class="img-fluid rounded shadow border border-success w-75 p-2 bg-white"
+                     alt="Classification Phase Preview">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-body my-0 py-0">
+              <p class="mt-3 mb-0 pb-0">
+                Current Extracted Features Files: <code id="featuresCount">{% if featuresContent %}{{
+                featuresContent|length }}{% else %}0{%
+                endif %}</code>
+              </p>
+              <!-- List all pickles -->
+              <ul class="list-unstyled" id="pickleList">
+                {% for featuresItem in featuresContent %}
+                <li class="mx-3">
+                  <span class="fas fa-arrow-circle-right"></span>
+                  <span>{{ featuresItem.folder }}</span>
+                  <span class="badge text-bg-info">{{ featuresItem.fileCreationDate }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          {% include 'flashes.component.html' %}
+
+          <form id="classificationForm" action="/classification" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <div class="mb-3">
+              <label for="featuresFile" class="form-label">Extracted Features File:</label>
+              <select class="form-control" name="featuresFile" id="featuresFile">
+                <option value="">Select Extracted Features File</option>
+                {% for featuresItem in featuresContent %}
+                <option value="{{ featuresItem.folder }}">
+                  {{ featuresItem.folder }} ({{ featuresItem.fileCreationDate }})
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="trainTestRatio">
+                Select Train-to-Test Ratio:
+                (<span class="badge text-bg-secondary" id="trainTestRationSpan">70%</span> for training)
+              </label>
+              <input type="range" class="form-range"
+                     name="trainTestRatio" id="trainTestRatio" value="70" min="0" max="100" step="1">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="outliersDetection">
+                Apply Outliers Detection:
+              </label>
+              <select class="form-control" name="outliersDetection" id="outliersDetection">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="outliersFraction">
+                Outliers Fraction
+                (<span class="badge text-bg-secondary" id="outliersFractionSpan">10%</span>)
+              </label>
+              <input type="range" class="form-range"
+                     name="outliersFraction" id="outliersFraction" value="10" min="0" max="100" step="1">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="featuresSelection">
+                Apply Features Selection:
+              </label>
+              <select class="form-control" name="featuresSelection" id="featuresSelection">
+                <option value="1" selected>Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="correlationThreshold">
+                Correlation Threshold (Features Selection)
+                (<span class="badge text-bg-secondary" id="correlationThresholdSpan">90%</span>)
+              </label>
+              <input type="range" class="form-range"
+                     name="correlationThreshold" id="correlationThreshold" value="90" min="0" max="100" step="1">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">
+                Features Scaling (Checkboxes):
+              </label>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="scaling[]" value="None"
+                       checked id="scaling-None">
+                <label class="form-check-label" for="scaling-None">No Scaling</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="scaling[]" value="STD"
+                       checked id="scaling-STD">
+                <label class="form-check-label" for="scaling-STD">Standardization</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="scaling[]" value="MinMax"
+                       checked id="scaling-MinMax">
+                <label class="form-check-label" for="scaling-MinMax">MinMax Scaling</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="scaling[]" value="Robust"
+                       checked id="scaling-Robust">
+                <label class="form-check-label" for="scaling-Robust">Robust Scaling</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="scaling[]" value="MaxAbs"
+                       checked id="scaling-MaxAbs">
+                <label class="form-check-label" for="scaling-MaxAbs">Max Absolute Scaling</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">
+                Classifiers (Checkboxes):
+              </label>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="GradientBoosting"
+                       checked id="classifier-GB">
+                <label class="form-check-label" for="classifier-GB">Gradient Boosting Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="XGB"
+                       checked id="classifier-XGB">
+                <label class="form-check-label" for="classifier-XGB">eXtreme Gradient Boosting Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="LGBM"
+                       checked id="classifier-LGBM">
+                <label class="form-check-label" for="classifier-LGBM">Light Gradient Boosting Machine Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="RandomForest"
+                       checked id="classifier-RF">
+                <label class="form-check-label" for="classifier-RF">Random Forest Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="DecisionTree"
+                       checked id="classifier-DT">
+                <label class="form-check-label" for="classifier-DT">Decision Tree Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="KNeighbors"
+                       checked id="classifier-KNN">
+                <label class="form-check-label" for="classifier-KNN">K-Nearest Neighbors Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="MLP"
+                       checked id="classifier-MLP">
+                <label class="form-check-label" for="classifier-MLP">Multi-Layer Perceptron Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="SVC"
+                       checked id="classifier-SVC">
+                <label class="form-check-label" for="classifier-SVC">Support Vector Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="LogisticRegression"
+                       checked id="classifier-LR">
+                <label class="form-check-label" for="classifier-LR">Logistic Regression Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="ExtraTrees"
+                       checked id="classifier-ET">
+                <label class="form-check-label" for="classifier-ET">Extra Trees Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]" value="AdaBoost"
+                       checked id="classifier-AB">
+                <label class="form-check-label" for="classifier-AB">AdaBoost Classifier</label>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="classifiers[]"
+                       value="HistGradientBoosting"
+                       checked id="classifier-HGB">
+                <label class="form-check-label" for="classifier-HGB">Histogram Gradient Boosting Classifier</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="trainTestRatio">
+                Number of Classification Trials to Produce %CI (Confidence Interval):
+              </label>
+              <input type="number" class="form-control" name="noOfTrials"
+                     id="noOfTrials" value="10" min="1" max="1000" step="1">
+            </div>
+
+            <div class="text-center">
+              <button type="button" class="btn btn-primary" id="classificationBtn">
+                Perform Classification
+              </button>
+            </div>
+          </form>
+
+
+          {% include 'progress.component.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+  $(document).ready(function () {
+    const progressCheckURL = '/progress-process?flag=classification';
+    ResetProgress();
+    setTimeout(CheckProgress, 1000, progressCheckURL);
+
+
+    $("#trainTestRatio").on("input", function () {
+      $("#trainTestRationSpan").text($(this).val() + "%");
+    });
+
+    $("#outliersFraction").on("input", function () {
+      $("#outliersFractionSpan").text($(this).val() + "%");
+    });
+
+    $("#correlationThreshold").on("input", function () {
+      $("#correlationThresholdSpan").text($(this).val() + "%");
+    });
+
+    $("#classificationBtn").click(function (e) {
+      e.preventDefault();
+      ResetProgress();
+
+      $("#loader").addClass("d-none");
+      $("button").prop("disabled", true);
+      $("form :input").prop("disabled", false);
+      $("form button").prop("disabled", false);
+
+      let formData = new FormData();
+      formData.append('baseFolder', $("#baseFolder").val());
+      formData.append('_csrf_token', "{{ csrf_token() }}");
+      formData.append('featuresFile', $("#featuresFile").val());
+      formData.append('trainTestRatio', $("#trainTestRatio").val());
+      formData.append('outliersDetection', $("#outliersDetection").val());
+      formData.append('outliersFraction', $("#outliersFraction").val());
+      formData.append('featuresSelection', $("#featuresSelection").val());
+      formData.append('correlationThreshold', $("#correlationThreshold").val());
+      formData.append('scaling', $("input[name='scaling[]']:checked").map(function () {
+        return $(this).val();
+      }).get());
+      formData.append('classifiers', $("input[name='classifiers[]']:checked").map(function () {
+        return $(this).val();
+      }).get());
+      formData.append('noOfTrials', $("#noOfTrials").val());
+
+      setTimeout(CheckProgress, 1000, progressCheckURL);
+
+      $.ajax({
+        url: '/classification',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          $("button").prop("disabled", false);
+          $("form :input").prop("disabled", false);
+          $("form button").prop("disabled", false);
+
+          setTimeout(CheckProgress, 1000, progressCheckURL);
+
+          if (response.status === 'success') {
+            // Show success message and then reload the page when the user clicks OK.
+            Swal.fire({
+              title: 'Success!',
+              text: response.message,
+              icon: 'success',
+              confirmButtonText: 'OK'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                location.reload();
+              }
+            });
+          } else {
+            Swal.fire({
+              title: 'Error!',
+              text: response.message,
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+      });
+    });
+
+
+  });
+
+
+</script>
+{% endblock %}

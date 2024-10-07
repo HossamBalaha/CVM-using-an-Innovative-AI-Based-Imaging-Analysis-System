@@ -1,0 +1,173 @@
+{% extends 'base.layout.html' %}
+{% block body %}
+<div class="container py-4">
+  <div class="p-5 mb-4 text-bg-dark border rounded-3 shadow">
+    <div class="container-fluid py-5">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-4 text-center">Dental Application</h1>
+          <div class="showMore my-3"
+               data-config='{"type": "text", "limit": 350, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
+            <p class="text-left mt-3">
+              Dental malocclusion, which affects 20–83% of adolescents and adults, is characterized by misaligned teeth
+              that impair masticatory function and cause aesthetic issues. Especially when considering adolescents,
+              timely
+              actions have the potential to prevent or hinder the progression of malocclusion in its early stages.
+            </p>
+            <p class="text-left">
+              For
+              effective early intervention, estimating skeletal growth remaining for these patients is a crucial aspect
+              of
+              orthodontic treatment, particularly when jaw growth modification or orthognathic surgery is involved. Over
+              the years, orthodontists have developed and utilized various methods to evaluate the developmental stage
+              of
+              orthodontic patients. In the past, skeletal age was used to determine a child's capacity for growth.
+              Traditionally, <b>cervical vertebral maturation (CVM)</b> staging and assessment of hand-wrist bone age
+              are utilized by dental practitioners.
+            </p>
+            <p class="text-left">
+              Adult orthodontic treatment has been increasingly popular in recent years, resulting in a scarcity of data
+              on this patient population. It is essential to grasp the psychological attributes and incentives of every
+              patient, given their potential substantial influence on both patient contentment and compliance with
+              treatment. Therefore, in order to improve the patient's treatment experience and raise the probability of
+              a successful treatment outcome, medical professionals must expand their understanding of this subgroup.
+            </p>
+            <p class="text-left">
+              Nevertheless, the need for extra radiographic tests with hand-wrist radiographs has led to hesitation from
+              orthodontists and patients when considering this approach in orthodontic procedures. Fortunately, due to
+              the possibility of evaluating CVM stages using lateral cephalograms, which are already essential for
+              orthodontic analysis, the adoption of CVM staging has been increasingly favored within the orthodontic
+              community. Lateral cephalograms are used to analyze the morphological characteristics of the second,
+              third, and fourth cervical vertebrae, aiming to identify potential variations that could be utilized in
+              estimating CVM.
+            </p>
+            <p class="text-left">
+              A modified version of the CVM approach was proposed by Baccetti et al. to identify the peak in mandibular
+              development. In this research, an examination was conducted on the structure of the second, third, and
+              fourth cervical vertebrae (depicted in the figure below on the left) using cephalograms from a group of
+              390 individuals who had not received orthodontic treatment. This investigation spanned six successive
+              observations. The novel CVM approach introduced in this study encompasses 6 distinct stages of maturation,
+              labeled as cervical stages 1 through 6 (CS1 to CS6). The stages of cervical vertebral maturation are
+              categorized into six stages depending on the vertebrae C2-C4 as presented in the figure below on the
+              right.
+            </p>
+            <p class="text-left">
+              During the initial stage (CS1), the lower borders of vertebrae C2-C4 display a flat configuration, while
+              the bodies of C3 and C4 take on a trapezoidal shape. After this stage, mandibular development peaks around
+              two years later. In stage two (CS2), a concavity emerges at the lower border of C2, and the shapes of the
+              C3 and C4 bodies remain trapezoidal. After this stage, mandibular development peaks around a year later.
+              Advancing to stage three (CS3), concavities are observable in the lower borders of both C2 and C3. The
+              bodies of C3 and C4 exhibit the possibility of being either trapezoidal or horizontally rectangular in
+              shape. The peak of mandibular growth transpires within the year following this stage.
+            </p>
+            <p class="text-left">
+              Progressing to stage four (CS4), concavities manifest at the lower borders of C2, C3, and C4. The bodies
+              of C3 and C4 transform into a horizontally rectangular configuration. Before this stage, the mandibular
+              growth peaked during the previous year or two. Moving on to stage five (CS5), the concavities along the
+              lower borders of C2, C3, and C4 persist. At least one of the bodies of C3 and C4 adopts a square shape, or
+              alternatively, the other cervical vertebra retains a rectangular horizontal form. At least a year has
+              passed since the mandibular development phase peaked. Finally, in the last stage (CS6), the concavities
+              along the lower borders of C2, C3, and C4 remain discernible. At least one of the bodies of C3 and C4
+              takes on a vertically rectangular shape, or the other cervical vertebra becomes square. At least two years
+              have passed since the peak of mandibular development.
+            </p>
+            <p class="text-left">
+
+            </p>
+          </div>
+          <hr class="my-4">
+          <div class="text-center">
+            <img src="data:image/jpg;base64,{{bonesImage}}"
+                 class="img-fluid rounded shadow border border-success p-2 bg-white"
+                 alt="Dental CVM Preview">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container py-4">
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card shadow rounded text-bg-light">
+        <div class="card-header">
+          <h5 class="text-center h5 py-2">Preprocessing Phase</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text showMore"
+             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
+            In this phase, you can load the images and masks from the data folder. The data folder should contain both
+            images and masks within the same directory. Each folder (images and masks) must include subfolders for the
+            classes (e.g., Stage 1, Stage 2, Stage 3), and the corresponding files must have matching names. The images
+            should be placed in the Original folder, while the masks should be in the Masks folder.
+          </p>
+          <div class="text-center">
+            <a href="/preprocessing" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-md-0 mt-3">
+      <div class="card shadow rounded text-bg-light">
+        <div class="card-header">
+          <h5 class="text-center h5 py-2">Features Extraction Phase</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text showMore"
+             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
+            In this phase, you can extract the features from the images and masks. The extracted features will be saved
+            on the server and can be used for further analysis.
+          </p>
+          <div class="text-center">
+            <a href="/features-extraction" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-3">
+      <div class="card shadow rounded text-bg-light">
+        <div class="card-header">
+          <h5 class="text-center h5 py-2">Classification Phase</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text showMore"
+             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
+            In this phase, you can perform the classification of the extracted features. The classification will be
+            based on the extracted features and the selected model.
+          </p>
+          <div class="text-center">
+            <a href="/classification" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-3">
+      <div class="card shadow rounded text-bg-secondary">
+        <div class="card-header">
+          <h5 class="text-center h5 py-2">Extracted Features Navigation</h5>
+        </div>
+        <div class="card-body">
+
+          <p class="card-text showMore"
+             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
+            You can navigate through the extracted features.
+          </p>
+          <div class="text-center">
+            <a href="/features-navigation" class="btn btn-light">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+{% endblock %}

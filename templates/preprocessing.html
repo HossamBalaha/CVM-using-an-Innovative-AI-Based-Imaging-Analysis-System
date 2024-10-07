@@ -1,0 +1,275 @@
+{% extends "base.layout.html" %}
+{% block body %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow rounded">
+        <div class="card-header">
+          <h5 class="text-center h3 py-2">
+            Data Preprocessing Phase
+          </h5>
+
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 bg-light">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Preprocessing</li>
+            </ol>
+          </nav>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-12">
+              <p class="text-left">
+                In this phase, you can load the images and masks from the data folder. The data folder should contain
+                both
+                images and masks within the same directory. Each folder (images and masks) must include subfolders for
+                the
+                classes (e.g., Stage 1, Stage 2, Stage 3), and the corresponding files must have matching names.
+                The images should be placed in the <code>Original</code> folder,
+                while the masks should be in the <code>Masks</code> folder.
+              </p>
+            </div>
+            <div class="col-12 my-3">
+              <div class="text-center">
+                <img src="data:image/jpg;base64,{{preprocessingImage}}"
+                     class="img-fluid rounded shadow border border-success w-75 p-2 bg-white"
+                     alt="Preprocessing Steps Preview">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-body my-0 py-0">
+              <p class="mt-3 mb-0 pb-0">
+                Current Stored Pickles: <code id="picklesCount">{% if pickleZip %}{{ pickleZip|length }}{% else %}0{%
+                endif %}</code>
+              </p>
+              <!-- List all pickles -->
+              <ul class="list-unstyled" id="pickleList">
+                {% for pickle in pickleZip %}
+                <li class="mx-3">
+                  <span class="fas fa-arrow-circle-right"></span>
+                  <span>{{ pickle[0] }}</span>
+                  <span class="badge text-bg-info">{{ pickle[1] }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          {% include 'flashes.component.html' %}
+
+          <!-- Form to load images and masks -->
+          <form id="loadForm" action="/preprocessing" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="action" value="load">
+            <div class="mb-3">
+              <label for="baseFolder" class="form-label">Data Folder:</label>
+              <input type="text" class="form-control" id="baseFolder" name="baseFolder"
+                     value="{{ baseFolder }}"
+                     placeholder="Enter data base folder path">
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-primary" id="loadButton">
+                Load Images and Masks
+              </button>
+            </div>
+          </form>
+
+          <div class="card mt-3 d-none" id="imagePreview">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12">
+                  <h5 class="text-center h5">Data Information</h5>
+
+                  <div class="alert alert-info" id="infoMessage" role="alert">
+                    <p class="my-0">Number of Images: <code id="numImages">0</code></p>
+                    <p class="my-0">Number of Masks: <code id="numMasks">0</code></p>
+                    <p class="my-0">Number of Classes: <code id="numClasses">0</code></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h5 class="text-center h5">Image Preview</h5>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 text-center">
+                  <img src=""
+                       id="image"
+                       class="img-fluid rounded shadow my-4"
+                       width="30%"
+                       alt="Image Preview">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <form id="saveForm" action="/preprocessing" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="action" value="save">
+                    <input type="hidden" name="baseFolder" value="" id="baseFolderSave">
+                    <div class="text-center">
+                      <button type="button" class="btn btn-info text-light" id="saveButton">
+                        Save Into Pickle File
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% include 'progress.component.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+  $(document).ready(function () {
+    const progressCheckURL = '/progress-process?flag=preprocessing';
+    ResetProgress();
+    setTimeout(CheckProgress, 1000, progressCheckURL);
+
+    $("#loadButton").click(function (e) {
+      e.preventDefault();
+      ResetProgress();
+
+      $("#loader").addClass("d-none");
+      $("button").prop("disabled", true);
+      $("form :input").prop("disabled", false);
+      $("form button").prop("disabled", false);
+
+      let formData = new FormData();
+      formData.append('baseFolder', $("#baseFolder").val());
+      formData.append('_csrf_token', "{{ csrf_token() }}");
+      formData.append('action', 'load');
+
+      setTimeout(CheckProgress, 1000, progressCheckURL);
+
+      $.ajax({
+        url: '/preprocessing',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          $("button").prop("disabled", false);
+          $("form :input").prop("disabled", false);
+          $("form button").prop("disabled", false);
+
+          setTimeout(CheckProgress, 1000, progressCheckURL);
+
+          if (response.status === 'success') {
+            Swal.fire({
+              title: 'Success!',
+              text: response.message,
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
+
+            let image = response.image;
+            let numImages = response.numImages;
+            let numMasks = response.numMasks;
+            let numClasses = response.numClasses;
+            let baseFolder = response.baseFolder;
+
+            $("#image").attr("src", "data:image/jpg;base64," + image);
+            $("#numImages").text(numImages);
+            $("#numMasks").text(numMasks);
+            $("#numClasses").text(numClasses);
+            $("#baseFolderSave").val(baseFolder);
+            $("#imagePreview").removeClass("d-none");
+
+
+          } else {
+            Swal.fire({
+              title: 'Error!',
+              text: response.message,
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+      });
+    });
+
+    $("#saveButton").click(function (e) {
+      e.preventDefault();
+      ResetProgress();
+
+      $("#loader").addClass("d-none");
+      $("button").prop("disabled", true);
+      $("form :input").prop("disabled", true);
+      $("form button").prop("disabled", true);
+
+      let formData = new FormData();
+      formData.append('baseFolder', $("#baseFolderSave").val());
+      formData.append('_csrf_token', "{{ csrf_token() }}");
+      formData.append('action', 'save');
+
+      setTimeout(CheckProgress, 1000, progressCheckURL);
+
+      $.ajax({
+        url: '/preprocessing',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          $("button").prop("disabled", false);
+          $("form :input").prop("disabled", false);
+          $("form button").prop("disabled", false);
+
+          setTimeout(CheckProgress, 1000, progressCheckURL);
+
+          if (response.status === 'success') {
+            let pickleZip = response.pickleZip;
+
+
+            let pickleList = "";
+            for (let i = 0; i < pickleZip.length; i++) {
+              pickleList += `<li class="mx-3">
+                  <span class="fas fa-arrow-circle-right"></span>
+                  <span>${pickleZip[i][0]}</span>
+                  <span class="badge text-bg-info">${pickleZip[i][1]}</span>
+                </li>`;
+            }
+            $("#pickleList").html(pickleList);
+            $("#picklesCount").text(pickleZip.length);
+
+            Swal.fire({
+              title: 'Success!',
+              text: response.message,
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
+          } else {
+            Swal.fire({
+              title: 'Error!',
+              text: response.message,
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        },
+      });
+
+    });
+  });
+
+
+</script>
+{% endblock %}
