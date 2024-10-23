@@ -1,0 +1,206 @@
+{% extends 'base.layout.html' %}
+{% block body %}
+
+<header class="py-5">
+  <div class="container px-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xxl-6">
+        <div class="text-center my-5">
+          <h1 class="fw-bolder mb-3">
+            CVM Assessment using an Innovative AI-Based Imaging Analysis System
+          </h1>
+          <p class="lead fw-normal text-muted mb-4">
+            Cervical Vertebral Maturation (CVM) Assessment using an Innovative Artificial Intelligence (AI)-Based
+            Imaging Analysis System
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="py-5 bg-light" id="scroll-target">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-5 mb-lg-0"
+             src="data:image/jpg;base64,{{bonesImage}}" alt="Dental CVM Preview"/>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bolder">Introduction</h2>
+        <p class="lead fw-normal text-muted mb-0">
+          The Cervical Vertebral Maturation (CVM) assessment plays a pivotal role in orthodontic diagnosis and treatment
+          planning by providing insights into skeletal growth and enabling timely interventions. This study introduces
+          an innovative approach to predict CVM stages based on novel imaging markers extracted from X-ray images, which
+          are then correlated with CVM stages.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6 order-first order-lg-last">
+        <img class="img-fluid rounded mb-5 mb-lg-0"
+             src="data:image/jpg;base64,{{frameworkImage}}" alt="Dental CVM Suggested Framework Preview"/>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bolder">Proposed System</h2>
+        <p class="lead fw-normal text-muted mb-0">
+          The proposed system comprises the following main steps: (i) initiating
+          with manually delineated cervical vertebrae (i.e., C2, C3, and C4) from the X-ray images; (ii) parcellating
+          the cervical vertebrae based on the Marching level-sets approach to generate five iso-contours for each
+          segmented cervical vertebra; the primary objective of vertebrae segmentation is to extract both local and
+          global imaging markers to accurately grade and classify CVM stages; (iii) extracting first and second-order
+          appearance and morphology imaging markers that describe the shape and appearance of each extracted cervical
+          vertebra; and (iv) employing two-stage classifiers to grade and classify CVM for each patient.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-5 mb-lg-0"
+             src="data:image/jpg;base64,{{cmImage}}" alt="Sample Results Preview"/>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bolder">Experimental Results</h2>
+        <p class="lead fw-normal text-muted mb-0">
+          The system
+          without data augmentation demonstrated promising results, achieving an accuracy of 95.85%, sensitivity of
+          88.03%, specificity of 97.20%, and precision of 88.70%. After applying data augmentation techniques, the
+          accuracy improved to 98.89%, with a mean score of 97.20%. To the best of our knowledge, this is the first
+          system to assess the six stages of CVM with such high accuracy. The proposed AI-based system will enhance
+          orthodontic patient care in the USA and worldwide by providing a new non-invasive tool for early CVM
+          assessment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container px-5 my-5">
+    <div class="text-center">
+      <h2 class="fw-bolder">Our Team</h2>
+      <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+    </div>
+    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Hossam+Balaha&background=aaffee"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Hossam Magdy Balaha
+          </h5>
+          <div class="fst-italic text-muted">
+            Email: hmbala01@louisville.edu
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Ahmed+Alksas&background=aaeeff"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Ahmed Alksas
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Amine+Fattal&background=eeffaa"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Amine Fattal
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Amir+Sewelam&background=aa77fc"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Amir A. Sewelam
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center mt-4">
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Wael+Aboelmaaty&background=9ff3fc"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Wael Aboelmaaty
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Khaled+Abdel-Ghaffar&background=afaefe"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Khaled Abdel-Ghaffar
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Toru+Deguchi&background=ffaeee"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Toru Deguchi
+          </h5>
+          <div class="fst-italic text-muted">
+
+          </div>
+        </div>
+      </div>
+      <div class="col mb-5 mb-5 mb-xl-0">
+        <div class="text-center">
+          <img class="img-fluid rounded-circle mb-4 px-4"
+               src="https://avatar.iran.liara.run/username?username=Ayman+El-Baz&background=aaaeee"
+               alt="Avatar"/>
+          <h5 class="fw-bolder">
+            Ayman El-Baz
+          </h5>
+          <div class="fst-italic text-muted">
+            Email: aselba01@louisville.edu
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -31,7 +31,7 @@ function CheckProgress(url) {
         // setTimeout(CheckProgress, 1000, url);
       } else {
         UpdateProgress(response.progress);
-        setTimeout(CheckProgress, 5000, url);
+        setTimeout(CheckProgress, 10000, url);
       }
     }, error: function (error) {
       console.log(error);

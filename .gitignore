@@ -8,3 +8,4 @@ static/Pickles/*
 static/Features/*
 static/Classification/*
 Helpers.py
+*.pyc

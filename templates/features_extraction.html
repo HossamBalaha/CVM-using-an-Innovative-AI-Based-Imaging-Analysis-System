@@ -90,48 +90,87 @@
             </div>
             <div class="mb-3">
               <label class="form-label">Select Distances (Checkboxes):</label>
+              {% for distance in [10, 20, 25, 30, 40, 50, 60, 70, 75, 80,90, 100] %}
               <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" name="distances[]" value="10" id="dist-10">
-                <label class="form-check-label" for="dist-10">10% Distance</label>
+                <input class="form-check-input" type="checkbox" name="distances[]" value="{{ distance }}"
+                       checked id="dist-{{ distance }}">
+                <label class="form-check-label" for="dist-{{ distance }}">{{ distance }}% Distance</label>
               </div>
-              <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" name="distances[]" value="25" id="dist-25">
-                <label class="form-check-label" for="dist-25">25% Distance</label>
-              </div>
-              <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" name="distances[]" value="50" id="dist-50">
-                <label class="form-check-label" for="dist-50">25% Distance</label>
-              </div>
-              <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" name="distances[]" value="75" id="dist-75">
-                <label class="form-check-label" for="dist-75">75% Distance</label>
-              </div>
-              <div class="form-check mx-2">
-                <input class="form-check-input" type="checkbox" name="distances[]" value="100" id="dist-100">
-                <label class="form-check-label" for="dist-100">100% Distance</label>
-              </div>
+              {% endfor %}
             </div>
             <div class="mb-3">
               <label class="form-label">Data Augmentation Techniques (Checkboxes):</label>
               <div class="form-check mx-2">
                 <input class="form-check-input" type="checkbox" name="augmentation[]" value="rotate" id="rotate">
                 <label class="form-check-label" for="rotate">Random Rotation</label>
+                <div class="form-text text-muted mt-0">
+                  Rotate the input by an angle selected randomly from the uniform distribution.
+                  <br>
+                  Rotation angle limit is 90 degrees.
+                  <br>
+                  For more information, visit <a href="https://explore.albumentations.ai/transform/Rotate"
+                                                 target="_blank">Click</a>.
+                </div>
               </div>
               <div class="form-check mx-2">
                 <input class="form-check-input" type="checkbox" name="augmentation[]" value="horz" id="horz">
                 <label class="form-check-label" for="horz">Horizontal Flipping</label>
+                <div class="form-text text-muted mt-0">Randomly flips the image horizontally.</div>
               </div>
               <div class="form-check mx-2">
                 <input class="form-check-input" type="checkbox" name="augmentation[]" value="vert" id="vert">
                 <label class="form-check-label" for="vert">Vertical Flipping</label>
+                <div class="form-text text-muted mt-0">Randomly flips the image vertically.</div>
               </div>
               <div class="form-check mx-2">
                 <input class="form-check-input" type="checkbox" name="augmentation[]" value="zoom" id="zoom">
                 <label class="form-check-label" for="zoom">Random Zoom</label>
+                <div class="form-text text-muted mt-0">Randomly zooms the image in and out.</div>
               </div>
               <div class="form-check mx-2">
                 <input class="form-check-input" type="checkbox" name="augmentation[]" value="shift" id="shift">
                 <label class="form-check-label" for="shift">Random Shift</label>
+                <div class="form-text text-muted mt-0">Randomly shifts the image horizontally and vertically.</div>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="augmentation[]" value="shift"
+                       id="RandomBrightnessContrast">
+                <label class="form-check-label" for="RandomBrightnessContrast">Random Brightness Contrast</label>
+                <div class="form-text text-muted mt-0">
+                  Randomly changes the brightness and contrast of the image.
+                  <br>
+                  Brightness limit (minimum and maximum) is (-0.2, 0.2).
+                  <br>
+                  For more information, visit <a
+                    href="https://explore.albumentations.ai/transform/RandomBrightnessContrast"
+                    target="_blank">Click</a>.
+                </div>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="augmentation[]" value="shift"
+                       id="RandomToneCurve">
+                <label class="form-check-label" for="RandomToneCurve">Random Tone Curve</label>
+                <div class="form-text text-muted mt-0">
+                  Randomly change the relationship between bright and dark areas of the image by manipulating its tone
+                  curve.
+                  <br>
+                  Scale is 0.1.
+                  <br>
+                  For more information, visit <a href="https://explore.albumentations.ai/transform/RandomToneCurve"
+                                                 target="_blank">Click</a>.
+                </div>
+              </div>
+              <div class="form-check mx-2">
+                <input class="form-check-input" type="checkbox" name="augmentation[]" value="shift" id="RandomGamma">
+                <label class="form-check-label" for="RandomGamma">Random Gamma</label>
+                <div class="form-text text-muted mt-0">
+                  Applies random gamma correction to the input image.
+                  <br>
+                  Gamma limit (lower and upper bounds for gamma adjustment) is (80, 120).
+                  <br>
+                  For more information, visit <a href="https://explore.albumentations.ai/transform/RandomGamma"
+                                                 target="_blank">Click</a>.
+                </div>
               </div>
             </div>
             <div class="text-center">
@@ -193,7 +232,7 @@
           $("form :input").prop("disabled", false);
           $("form button").prop("disabled", false);
 
-          setTimeout(CheckProgress, 1000, progressCheckURL);
+          setTimeout(CheckProgress, 10000, progressCheckURL);
 
           if (response.status === 'success') {
             // Show success message and then reload the page when the user clicks OK.

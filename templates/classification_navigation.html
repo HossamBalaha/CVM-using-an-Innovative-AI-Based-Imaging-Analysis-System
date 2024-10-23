@@ -80,6 +80,9 @@
               <h6 class="card-title text-center">Classification Results for Features File: <span
                   class="badge bg-primary">{{ k1 }}</span></h6>
               <hr>
+              {% if allFolders[k1]|length == 0 %}
+              <p class="text-center text-danger mb-0">No Results Found</p>
+              {% else %}
               <div class="accordion" id="accordionExample-{{ k1 }}">
                 {% for k2 in allFolders[k1].keys() %}
 
@@ -101,14 +104,35 @@
                         <b>Configurations</b>
                       </p>
                       <hr>
-                      <ul class="list-unstyled">
-                        {% for k3 in allFolders[k1][k2]["Configurations"].keys() %}
-                        <li class="list-item my-1 text-left">
-                          <span class="badge bg-primary p-2 mx-1">{{ k3 }}</span>
-                          <span class="badge bg-secondary p-2 mx-1">{{ allFolders[k1][k2]["Configurations"][k3] }}</span>
-                        </li>
-                        {% endfor %}
-                      </ul>
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered border-dark"
+                               style="width:100%; font-size: 0.7rem;">
+                          <thead>
+                          <tr>
+                            <th scope="col">Configuration</th>
+                            <th scope="col">Value</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          {% for k3 in allFolders[k1][k2]["Configurations"].keys() %}
+                          <tr>
+                            <td>{{ k3 }}</td>
+                            <td>{{ allFolders[k1][k2]["Configurations"][k3] }}</td>
+                          </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+
+<!--                       <ul class="list-unstyled"> -->
+<!--                         {% for k3 in allFolders[k1][k2]["Configurations"].keys() %} -->
+<!--                         <li class="list-item my-1 text-left"> -->
+<!--                           <span class="badge bg-primary p-2 mx-1">{{ k3 }}</span> -->
+<!--                           <span -->
+<!--                               class="badge bg-secondary p-2 mx-1">{{ allFolders[k1][k2]["Configurations"][k3] }}</span> -->
+<!--                         </li> -->
+<!--                         {% endfor %} -->
+<!--                       </ul> -->
                       <hr>
 
 
@@ -118,7 +142,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -151,7 +175,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -184,7 +208,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -217,7 +241,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -253,7 +277,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -289,7 +313,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -325,7 +349,7 @@
                       <hr>
                       <div class="table-responsive">
                         <table class="table table-striped table-bordered border-dark"
-                               style="width:100%; font-size: 0.6rem;">
+                               style="width:100%; font-size: 0.7rem;">
                           <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -361,6 +385,7 @@
 
                 {% endfor %}
               </div>
+              {% endif %}
             </div>
           </div>
           {% endfor %}

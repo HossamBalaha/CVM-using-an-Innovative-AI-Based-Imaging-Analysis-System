@@ -1,191 +1,230 @@
 {% extends 'base.layout.html' %}
 {% block body %}
-<div class="container py-4">
-  <div class="p-5 mb-4 text-bg-dark border rounded-3 shadow">
-    <div class="container-fluid py-5">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="display-4 text-center">Dental Application</h1>
-          <div class="showMore my-3"
-               data-config='{"type": "text", "limit": 350, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            <p class="text-left mt-3">
-              Dental malocclusion, which affects 20–83% of adolescents and adults, is characterized by misaligned teeth
-              that impair masticatory function and cause aesthetic issues. Especially when considering adolescents,
-              timely
-              actions have the potential to prevent or hinder the progression of malocclusion in its early stages.
-            </p>
-            <p class="text-left">
-              For
-              effective early intervention, estimating skeletal growth remaining for these patients is a crucial aspect
-              of
-              orthodontic treatment, particularly when jaw growth modification or orthognathic surgery is involved. Over
-              the years, orthodontists have developed and utilized various methods to evaluate the developmental stage
-              of
-              orthodontic patients. In the past, skeletal age was used to determine a child's capacity for growth.
-              Traditionally, <b>cervical vertebral maturation (CVM)</b> staging and assessment of hand-wrist bone age
-              are utilized by dental practitioners.
-            </p>
-            <p class="text-left">
-              Adult orthodontic treatment has been increasingly popular in recent years, resulting in a scarcity of data
-              on this patient population. It is essential to grasp the psychological attributes and incentives of every
-              patient, given their potential substantial influence on both patient contentment and compliance with
-              treatment. Therefore, in order to improve the patient's treatment experience and raise the probability of
-              a successful treatment outcome, medical professionals must expand their understanding of this subgroup.
-            </p>
-            <p class="text-left">
-              Nevertheless, the need for extra radiographic tests with hand-wrist radiographs has led to hesitation from
-              orthodontists and patients when considering this approach in orthodontic procedures. Fortunately, due to
-              the possibility of evaluating CVM stages using lateral cephalograms, which are already essential for
-              orthodontic analysis, the adoption of CVM staging has been increasingly favored within the orthodontic
-              community. Lateral cephalograms are used to analyze the morphological characteristics of the second,
-              third, and fourth cervical vertebrae, aiming to identify potential variations that could be utilized in
-              estimating CVM.
-            </p>
-            <p class="text-left">
-              A modified version of the CVM approach was proposed by Baccetti et al. to identify the peak in mandibular
-              development. In this research, an examination was conducted on the structure of the second, third, and
-              fourth cervical vertebrae (depicted in the figure below on the left) using cephalograms from a group of
-              390 individuals who had not received orthodontic treatment. This investigation spanned six successive
-              observations. The novel CVM approach introduced in this study encompasses 6 distinct stages of maturation,
-              labeled as cervical stages 1 through 6 (CS1 to CS6). The stages of cervical vertebral maturation are
-              categorized into six stages depending on the vertebrae C2-C4 as presented in the figure below on the
-              right.
-            </p>
-            <p class="text-left">
-              During the initial stage (CS1), the lower borders of vertebrae C2-C4 display a flat configuration, while
-              the bodies of C3 and C4 take on a trapezoidal shape. After this stage, mandibular development peaks around
-              two years later. In stage two (CS2), a concavity emerges at the lower border of C2, and the shapes of the
-              C3 and C4 bodies remain trapezoidal. After this stage, mandibular development peaks around a year later.
-              Advancing to stage three (CS3), concavities are observable in the lower borders of both C2 and C3. The
-              bodies of C3 and C4 exhibit the possibility of being either trapezoidal or horizontally rectangular in
-              shape. The peak of mandibular growth transpires within the year following this stage.
-            </p>
-            <p class="text-left">
-              Progressing to stage four (CS4), concavities manifest at the lower borders of C2, C3, and C4. The bodies
-              of C3 and C4 transform into a horizontally rectangular configuration. Before this stage, the mandibular
-              growth peaked during the previous year or two. Moving on to stage five (CS5), the concavities along the
-              lower borders of C2, C3, and C4 persist. At least one of the bodies of C3 and C4 adopts a square shape, or
-              alternatively, the other cervical vertebra retains a rectangular horizontal form. At least a year has
-              passed since the mandibular development phase peaked. Finally, in the last stage (CS6), the concavities
-              along the lower borders of C2, C3, and C4 remain discernible. At least one of the bodies of C3 and C4
-              takes on a vertically rectangular shape, or the other cervical vertebra becomes square. At least two years
-              have passed since the peak of mandibular development.
-            </p>
-            <p class="text-left">
 
+<header class="bg-dark py-5">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+          <h1 class="display-5 fw-bolder text-white mb-2">
+            CVM Assessment using an Innovative AI-Based Imaging Analysis System
+          </h1>
+          <p class="lead fw-normal text-white-50 mb-4">
+            Cervical Vertebral Maturation (CVM) Assessment using an Innovative Artificial Intelligence (AI)-Based
+            Imaging Analysis System
+          </p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#phases">Get Started</a>
+            <a class="btn btn-outline-light btn-lg px-4" href="/about">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+        <img class="img-fluid rounded-3 my-5 img-rounded"
+             src="https://doodleipsum.com/700x525/outline?bg=f0f0f0&i=04a779d042347a64d9c5908ceee9069e"
+             alt="..."/>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="py-5" id="features">
+  <div class="container px-5 my-5">
+    <div class="row gx-5">
+      <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">
+        A trusted way to start CVM assessment.
+      </h2></div>
+      <div class="col-lg-8">
+        <div class="row gx-5 row-cols-1 row-cols-md-2">
+          <div class="col mb-5 h-100">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+            <h2 class="h5">Published Manuscript</h2>
+            <p class="mb-0">
+              Balaha et al. published a manuscript in the <span class="text-success">Biomedical Signal Processing and
+              Control</span> journal, titled <span class="text-success">Cervical Vertebral Maturation Assessment using
+              an Innovative Artificial Intelligence-Based Imaging Analysis System</span>. The manuscript is available
+              online and can be accessed through the provided link.
+              <a href="#" target="_blank">Click to Open the Published Manuscript</a>
             </p>
           </div>
-          <hr class="my-4">
-          <div class="text-center">
-            <img src="data:image/jpg;base64,{{bonesImage}}"
-                 class="img-fluid rounded shadow border border-success p-2 bg-white"
-                 alt="Dental CVM Preview">
+          <div class="col mb-5 h-100">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+            <h2 class="h5">Filed Patent</h2>
+            <p class="mb-0">
+              Balaha et al. filed a patent on <span class="text-success">December 18th, 2023</span>,
+              under the number <span class="text-success">63/611,763</span>. The patent is currently in
+              the <span class="text-success">Filed</span> status,
+              protecting our innovations in AI, medical imaging, and deep learning, as part of our
+              ongoing efforts to advance medical diagnostics and predictive analytics.
+              <a href="https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840"
+                 target="_blank">Click to Open the IP (Intellectual Property) Information</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-
-<div class="container py-4">
-
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="card shadow rounded text-bg-light">
-        <div class="card-header">
-          <h5 class="text-center h5 py-2">Preprocessing Phase</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-text showMore"
-             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            In this phase, you can load the images and masks from the data folder. The data folder should contain both
-            images and masks within the same directory. Each folder (images and masks) must include subfolders for the
-            classes (e.g., Stage 1, Stage 2, Stage 3), and the corresponding files must have matching names. The images
-            should be placed in the Original folder, while the masks should be in the Masks folder.
+<section class="py-5 bg-light" id="phases">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          <h2 class="fw-bolder">System Phases</h2>
+          <p class="lead fw-normal text-muted mb-5">
+            The system consists of several phases, each of which is designed to facilitate the CVM assessment process.
           </p>
-          <div class="text-center">
-            <a href="/preprocessing" class="btn btn-primary">Open</a>
-          </div>
         </div>
       </div>
     </div>
-
-    <div class="col-12 col-md-6 mt-md-0 mt-3">
-      <div class="card shadow rounded text-bg-light">
-        <div class="card-header">
-          <h5 class="text-center h5 py-2">Features Extraction Phase</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-text showMore"
-             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            In this phase, you can extract the features from the images and masks. The extracted features will be saved
-            on the server and can be used for further analysis.
-          </p>
-          <div class="text-center">
-            <a href="/features-extraction" class="btn btn-primary">Open</a>
+    <div class="row gx-5">
+      <div class="col-lg-4 mb-5">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=89a3a0a84b7e7d0f630f0e23f17c179a" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2"><i class="fa fa-cog"></i> First Phase</div>
+            <a class="text-decoration-none link-dark stretched-link" href="/preprocessing">
+              <h5 class="card-title mb-3">
+                Preprocessing Phase
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              In this phase, you can load the images and masks from the data folder. The data folder should contain
+              both images and masks within the same directory. Each folder (images and masks) must include subfolders
+              for the classes (e.g., Stage 1, Stage 2, Stage 3), and the corresponding files must have matching names.
+              The images should be placed in the Original folder, while the masks should be in the Masks folder.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-12 col-md-6 mt-3">
-      <div class="card shadow rounded text-bg-light">
-        <div class="card-header">
-          <h5 class="text-center h5 py-2">Classification Phase</h5>
-        </div>
-        <div class="card-body">
-          <p class="card-text showMore"
-             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            In this phase, you can perform the classification of the extracted features. The classification will be
-            based on the extracted features and the selected model.
-          </p>
-          <div class="text-center">
-            <a href="/classification" class="btn btn-primary">Open</a>
+      <div class="col-lg-4 mb-5">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=50670b7772c61c8ccf2ea66e29f4ab95" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2"><i class="fa fa-cog"></i> Second Phase</div>
+            <a class="text-decoration-none link-dark stretched-link" href="/features-extraction">
+              <h5 class="card-title mb-3">
+                Features Extraction Phase
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              In this phase, you can extract the features from the images and masks. The extracted features will be
+              saved on the server and can be used for further analysis.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12 col-md-6 mt-3">
-      <div class="card shadow rounded text-bg-secondary">
-        <div class="card-header">
-          <h5 class="text-center h5 py-2">Extracted Features Navigation</h5>
-        </div>
-        <div class="card-body">
-
-          <p class="card-text showMore"
-             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            You can navigate through the extracted features.
-          </p>
-          <div class="text-center">
-            <a href="/features-navigation" class="btn btn-light">Open</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 mt-3">
-      <div class="card shadow rounded text-bg-secondary">
-        <div class="card-header">
-          <h5 class="text-center h5 py-2">Classification Results Navigation</h5>
-        </div>
-        <div class="card-body">
-
-          <p class="card-text showMore"
-             data-config='{"type": "text", "limit": 75, "more": "<span class=\"fa-solid fa-arrow-right\"></span> show more", "less": "<span class=\"fa-solid fa-arrow-left\"></span> less"}'>
-            You can navigate through the classification results.
-          </p>
-          <div class="text-center">
-            <a href="/classification-navigation" class="btn btn-light">Open</a>
+      <div class="col-lg-4 mb-5">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=34c625e6dca86d75f482e050e145c82b" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2"><i class="fa fa-cog"></i> Third Phase</div>
+            <a class="text-decoration-none link-dark stretched-link" href="/classification">
+              <h5 class="card-title mb-3">
+                Classification Phase
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              In this phase, you can perform the classification of the extracted features. The classification will be
+              based on the extracted features and the selected model.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
+<section class="py-5">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          <h2 class="fw-bolder">Results Navigation</h2>
+          <p class="lead fw-normal text-muted mb-5">
+            You can navigate through the results of the system to explore the extracted features and the classification
+            results.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row gx-5">
+      <div class="col-lg-4 mb-5 mx-auto">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=2b4ed964b7814afb36a7cf45fc1c35fc" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">
+              <i class="fa fa-eye"></i> Navigation
+            </div>
+            <a class="text-decoration-none link-dark stretched-link" href="/features-navigation">
+              <h5 class="card-title mb-3">
+                Extracted Features Navigation
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              You can navigate through the extracted features.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-5 mx-auto">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=4ecfb97643c9fbb661a4a9a01a7a5b38" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">
+              <i class="fa fa-eye"></i> Navigation
+            </div>
+            <a class="text-decoration-none link-dark stretched-link" href="/classification-navigation">
+              <h5 class="card-title mb-3">
+                Classification Results Navigation
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              You can navigate through the classification results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<section class="py-5 bg-light">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          <h2 class="fw-bolder">System Inference</h2>
+          <p class="lead fw-normal text-muted mb-5">
+            You can perform the inference phase to classify the image based on the extracted features and the selected
+            model.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row gx-5">
+      <div class="col-lg-4 mb-5 mx-auto">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="https://doodleipsum.com/700x394/hand-drawn?i=5c8453011df3db1051a6654c0bff4d07" alt="..."/>
+          <div class="card-body p-4">
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">
+              <i class="fa fa-search"></i> Prediction
+            </div>
+            <a class="text-decoration-none link-dark stretched-link" href="/inference">
+              <h5 class="card-title mb-3">
+                Inference Phase
+              </h5>
+            </a>
+            <p class="card-text mb-0">
+              In this phase, you can perform the inference phase. In it, you can upload an image and the corresponding
+              mask to classify the image based on the extracted features and the selected model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -285,14 +285,17 @@
     $("#trainTestRatio").on("input", function () {
       $("#trainTestRationSpan").text($(this).val() + "%");
     });
+    $("#trainTestRationSpan").text($("#trainTestRatio").val() + "%");
 
     $("#outliersFraction").on("input", function () {
       $("#outliersFractionSpan").text($(this).val() + "%");
     });
+    $("#outliersFractionSpan").text($("#outliersFraction").val() + "%");
 
     $("#correlationThreshold").on("input", function () {
       $("#correlationThresholdSpan").text($(this).val() + "%");
     });
+    $("#correlationThresholdSpan").text($("#correlationThreshold").val() + "%");
 
     $("#classificationBtn").click(function (e) {
       e.preventDefault();
@@ -304,7 +307,6 @@
       $("form button").prop("disabled", false);
 
       let formData = new FormData();
-      formData.append('baseFolder', $("#baseFolder").val());
       formData.append('_csrf_token', "{{ csrf_token() }}");
       formData.append('featuresFile', $("#featuresFile").val());
       formData.append('trainTestRatio', $("#trainTestRatio").val());
@@ -333,7 +335,7 @@
           $("form :input").prop("disabled", false);
           $("form button").prop("disabled", false);
 
-          setTimeout(CheckProgress, 1000, progressCheckURL);
+          setTimeout(CheckProgress, 10000, progressCheckURL);
 
           if (response.status === 'success') {
             // Show success message and then reload the page when the user clicks OK.
