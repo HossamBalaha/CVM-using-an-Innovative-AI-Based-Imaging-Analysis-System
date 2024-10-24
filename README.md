@@ -28,7 +28,7 @@ The website views of the project are shown in the following figures:
 
 1. **Home Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/1-Index.jpg" target="_blank">
         <img src="./Visualization/1-Index.jpg" alt="Home Page" width="25%"/>
     </a>
@@ -36,7 +36,7 @@ The website views of the project are shown in the following figures:
 
 2. **About Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/2-About.jpg" target="_blank">
         <img src="./Visualization/2-About.jpg" alt="About Page" width="25%"/>
     </a>
@@ -44,7 +44,7 @@ The website views of the project are shown in the following figures:
 
 3. **Data Preprocessing Phase Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/3-Data%20Preprocessing%20Phase.jpg" target="_blank">
         <img src="./Visualization/3-Data%20Preprocessing%20Phase.jpg" alt="Data Preprocessing Phase Page" width="25%"/>
     </a>
@@ -52,7 +52,7 @@ The website views of the project are shown in the following figures:
 
 4. **Features Extraction Phase Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/4-Features%20Extraction%20Phase.jpg" target="_blank">
         <img src="./Visualization/4-Features%20Extraction%20Phase.jpg" alt="Features Extraction Phase Page" width="25%"/>
     </a>
@@ -60,7 +60,7 @@ The website views of the project are shown in the following figures:
 
 5. **Classification Phase Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/5-Classification%20Phase.jpg" target="_blank">
         <img src="./Visualization/5-Classification%20Phase.jpg" alt="Classification Phase Page" width="25%"/>
     </a>
@@ -68,7 +68,7 @@ The website views of the project are shown in the following figures:
 
 6. **Extracted Features Navigation Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/6-Extracted%20Features%20Navigation.jpg" target="_blank">
         <img src="./Visualization/6-Extracted%20Features%20Navigation.jpg" alt="Extracted Features Navigation Page" width="25%"/>
     </a>
@@ -76,7 +76,7 @@ The website views of the project are shown in the following figures:
 
 7. **Classification Results Navigation Page 1**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/7-Classification%20Results%20Navigation-Closed.jpg" target="_blank">
         <img src="./Visualization/7-Classification%20Results%20Navigation-Closed.jpg" alt="Classification Results Navigation Page 1" width="25%"/>
     </a>
@@ -84,7 +84,7 @@ The website views of the project are shown in the following figures:
 
 8. **Classification Results Navigation Page 2**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/8-Classification%20Results%20Navigation-Opened.jpg" target="_blank">
         <img src="./Visualization/8-Classification%20Results%20Navigation-Opened.jpg" alt="Classification Results Navigation Page 2" width="25%"/>
     </a>
@@ -92,7 +92,7 @@ The website views of the project are shown in the following figures:
 
 9. **Inference Phase Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/9-Inference%20Phase.jpg" target="_blank">
         <img src="./Visualization/9-Inference%20Phase.jpg" alt="Inference Phase Page" width="25%"/>
     </a>
@@ -100,7 +100,7 @@ The website views of the project are shown in the following figures:
 
 10. **Inference Phase (Prediction) Page**:
 
-<div style="text-align: center;">
+<div style="text-align: center;" align="center">
     <a href="./Visualization/10-Inference%20Phase-Prediction.jpg" target="_blank">
         <img src="./Visualization/10-Inference%20Phase-Prediction.jpg" alt="Inference Phase (Prediction) Page" width="25%"/>
     </a>
