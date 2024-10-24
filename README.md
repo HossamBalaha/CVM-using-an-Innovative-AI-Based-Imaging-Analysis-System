@@ -4,8 +4,6 @@
 
 ### Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging Analysis System
 
-**Journal**: Biomedical Signal Processing and Control (Elsevier).
-
 **Authors**: **Hossam Magdy Balaha**<sup>1</sup>, Ahmed Alksas<sup>1</sup>, Amine Fattal<sup>2</sup>,
 Amir A. Sewelam<sup>3</sup>, Wael Aboelmaaty<sup>4,5</sup>, Khaled Abdel-Ghaffar<sup>6</sup>,
 Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
@@ -19,18 +17,34 @@ Saudi Arabia.
 <br> <sup>6</sup> Khaled Abdel-Ghaffar: Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University,
 Egypt.
 
-**DOI**: In Progress.
+#### Manuscript Information
 
-**Link**: In Progress.
+* **Journal**: Biomedical Signal Processing and Control.
+* **Publisher**: Elsevier.
+* **DOI**: In Progress.
+* **Link**: In Progress.
 
 ### Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging (24014)
 
 **Patent**:  Balaha et al. filed a patent on `December 18th, 2023`, under the number `63/611,763`. The patent is
 currently in the `Filed` status, protecting our innovations in AI, medical imaging, and deep learning, as part of our
 ongoing efforts to advance medical diagnostics and predictive analytics.
-<a href="https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840" target="_blank" rel="noopener">
-Click to Open the IP (Intellectual Property) Information
-</a>
+
+**Researchers**: **Hossam Magdy Balaha**<sup>1</sup>, Ahmed Alksas<sup>1</sup>, Amine Fattal<sup>2</sup>,
+Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
+
+<sup>1</sup> Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
+<br> <sup>2</sup> Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
+
+#### IP (Intellectual Property) Information
+
+* **Published**: Jan 19th, 2024
+* **IP Date**: Dec 18th, 2023
+* **IP Number**: 63/611,763
+* **IP Status**: Filed
+* **IP Detailed Information**:
+  <a href="https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840" target="_blank" rel="noopener">
+  Click to Open</a>
 
 ## Website Views
 
