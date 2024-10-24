@@ -13,7 +13,7 @@ Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 <br> <sup>3</sup> Orthodontics Department, Faculty of Dentistry, Horus University, Egypt.
 <br> <sup>4</sup> College of Dentistry, King Saud bin Abdulaziz University for Health Sciences, Riyadh,
 Saudi Arabia.
-<br> <sup>5</sup> Oral Radiology and Diagnostic Sciences, Faculty of Dentistry, Mansoura University
+<br> <sup>5</sup> Oral Radiology and Diagnostic Sciences, Faculty of Dentistry, Mansoura University, Mansoura, Egypt.
 <br> <sup>6</sup> Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University,
 Egypt.
 
