@@ -11,10 +11,10 @@ Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 <sup>1</sup> Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
 <br> <sup>2</sup> Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
 <br> <sup>3</sup> Orthodontics Department, Faculty of Dentistry, Horus University, Egypt.
-<br> <sup>4</sup> Wael Aboelmaaty: College of Dentistry, King Saud bin Abdulaziz University for Health Sciences, Riyadh,
+<br> <sup>4</sup> College of Dentistry, King Saud bin Abdulaziz University for Health Sciences, Riyadh,
 Saudi Arabia.
 <br> <sup>5</sup> Oral Radiology and Diagnostic Sciences, Faculty of Dentistry, Mansoura University
-<br> <sup>6</sup> Khaled Abdel-Ghaffar: Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University,
+<br> <sup>6</sup> Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University,
 Egypt.
 
 #### Manuscript Information
