@@ -204,7 +204,7 @@ To install the environment, follow these steps:
 8. To deactivate the environment, you can run:
    > conda deactivate
 
-## Citations
+## Citations and Acknowledgements
 
 If you find this project useful in your research or projects, please consider citing the following paper:
 
@@ -212,7 +212,12 @@ If you find this project useful in your research or projects, please consider ci
 In Progress
 ```
 
-## Licence
+This project was supported by the University of Louisville (J.B. Speed School of Engineering and School of
+Dentistry).
+We would like to acknowledge the support and resources provided by these institutions. We would also like
+to thank the research team members for their contributions to this project.
+
+## Licence Information and Permissions
 
 No part of this project may be reproduced, distributed, or transmitted in any form or by any means, including
 photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the
@@ -225,7 +230,10 @@ with others without the prior written permission of the first author.
 In case you would like to use this project for commercial purposes or share it with others, please contact the first
 author (and/or corresponding author) to obtain the required permissions.
 
-## Contact
+## Contact Information and Support
+
+This repository including the code, website, and documentation was originally created, developed, and maintained
+by `Hossam Magdy Balaha`.
 
 For any questions or inquiries, please contact `Hossam Magdy Balaha` using the contact information available on
 my CV at the following link: https://hossambalaha.github.io/
