@@ -6,21 +6,22 @@
 
 **Journal**: Biomedical Signal Processing and Control (Elsevier).
 
-**Authors**: **Hossam Magdy Balaha**$^1$, Ahmed Alksas$^1$, Amine Fattal$^2$,
-Amir A. Sewelam$^3$, Wael Aboelmaaty$^{4,5}$, Khaled Abdel-Ghaffar$^6$,
-Toru Deguchi$^2$, and Ayman El-Baz$^1$.
+**Authors**: **Hossam Magdy Balaha**<sup>1</sup>, Ahmed Alksas<sup>1</sup>, Amine Fattal<sup>2</sup>,
+Amir A. Sewelam<sup>3</sup>, Wael Aboelmaaty<sup>4,5</sup>, Khaled Abdel-Ghaffar<sup>6</sup>,
+Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 
-$^1$ Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
-<br> $^2$ Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
-<br> $^3$ Orthodontics Department, Faculty of Dentistry, Horus University, Egypt.
-<br> $^4$ Wael Aboelmaaty: College of Dentistry, King Saud bin Abdulaziz University for Health Sciences, Riyadh, Saudi
-Arabia.
-<br> $^5$ Oral Radiology and Diagnostic Sciences, Faculty of Dentistry, Mansoura University
-<br> $^6$ Khaled Abdel-Ghaffar: Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University, Egypt.
+<sup>1</sup> Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
+<br> <sup>2</sup> Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
+<br> <sup>3</sup> Orthodontics Department, Faculty of Dentistry, Horus University, Egypt.
+<br> <sup>4</sup> Wael Aboelmaaty: College of Dentistry, King Saud bin Abdulaziz University for Health Sciences, Riyadh,
+Saudi Arabia.
+<br> <sup>5</sup> Oral Radiology and Diagnostic Sciences, Faculty of Dentistry, Mansoura University
+<br> <sup>6</sup> Khaled Abdel-Ghaffar: Oral Diagnosis and Periodontology, Faculty of Dentistry, Ain Shams University,
+Egypt.
 
-**DOI**:
+**DOI**: In Progress.
 
-**Link**:
+**Link**: In Progress.
 
 ## Website Views
 
@@ -106,7 +107,7 @@ The website views of the project are shown in the following figures:
     </a>
 </div>
 
-## Major Packages Used
+## Primary Packages Used
 
 1. **albumentations**: A fast and flexible library for augmenting images, useful for image preprocessing and data
    augmentation in computer vision tasks.
@@ -185,13 +186,14 @@ To install the environment, follow these steps:
 If you find this project useful in your research or projects, please consider citing the following paper:
 
 ```bibtex
+In Progress
 ```
 
 ## Licence
 
 No part of this project may be reproduced, distributed, or transmitted in any form or by any means, including
-photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the 
-first author (and/or corresponding author), except in the case of brief quotations embodied in critical reviews 
+photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the
+first author (and/or corresponding author), except in the case of brief quotations embodied in critical reviews
 and certain other noncommercial uses permitted by copyright law.
 
 This means that you are not allowed to use this project for commercial purposes, and you are not allowed to share it
