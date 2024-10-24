@@ -28,9 +28,9 @@ Egypt.
 **Patent**:  Balaha et al. filed a patent on `December 18th, 2023`, under the number `63/611,763`. The patent is
 currently in the `Filed` status, protecting our innovations in AI, medical imaging, and deep learning, as part of our
 ongoing efforts to advance medical diagnostics and predictive analytics.
-[Click to Open the IP (Intellectual Property) Information](https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840){:target="_blank"}
-
-
+<a href="https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840" target="_blank">
+Click to Open the IP (Intellectual Property) Information
+</a>
 
 ## Website Views
 
