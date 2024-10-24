@@ -214,8 +214,9 @@ In Progress
 
 This project was supported by the University of Louisville (J.B. Speed School of Engineering and School of
 Dentistry).
-We would like to acknowledge the support and resources provided by these institutions. We would also like
-to thank the research team members for their contributions to this project.
+We would like to acknowledge the support and resources provided by these institutions.
+We would also like to thank the research team members for their contributions to this project.
+We are grateful for the reviewers' feedback and suggestions, which have helped improve the quality of this work.
 
 ## Licence Information and Permissions
 
