@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session, jsonify
 import flask, flask_wtf
 from flask_wtf.csrf import CSRFError, CSRFProtect
-# from HelpersX import *
+from HelpersX import *
 
-from Helpers import *
+# from Helpers import *
 
 print("- Flask:", flask.__version__)
 print("- Flask WTF:", flask_wtf.__version__)
