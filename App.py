@@ -1362,7 +1362,7 @@ def classification():
         # Print LaTeX table.
         latexContent = top1Metrics.style.hide(axis="index").to_latex(
           position_float="centering",
-          caption=r"First Stage Performance Summary: Individual Classifier Metrics.",
+          caption=r"Stage Performance Summary: Individual Classifier Metrics.",
           multirow_align="c",
           multicol_align="c",
           column_format="|c" * (len(columns2Print) - 1) + "|",
@@ -1376,7 +1376,7 @@ def classification():
         # Print LaTeX table.
         latexContentComb = top1MetricsComb.style.hide(axis="index").to_latex(
           position_float="centering",
-          caption=r"First Stage Performance Summary: Combined Classifier Metrics.",
+          caption=r"Stage Performance Summary: Combined Classifier Metrics.",
           multirow_align="c",
           multicol_align="c",
           column_format="|c" * (len(columns2Print) - 1) + "|",
@@ -1706,6 +1706,71 @@ def classificationNavigation():
       frCols = frCols[17:] + frCols[:10] + ["AUC_Mean"] + ["Mean_Score"] + frCols[10:15]
       fr = fr[frCols]
 
+      frLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results", "Final_Results.tex")
+      if (os.path.exists(frLaTeXFile)):
+        with open(frLaTeXFile, "r") as f:
+          frLaTeX = f.read()
+      else:
+        frLaTeX = ""
+      frLaTeX = frLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      fst1imLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                     "First_Stage_Top1_Individual_Metrics.tex")
+      if (os.path.exists(fst1imLaTeXFile)):
+        with open(fst1imLaTeXFile, "r") as f:
+          fst1imLaTeX = f.read()
+      else:
+        fst1imLaTeX = ""
+      fst1imLaTeX = fst1imLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      ssut1imLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                      "Second_Stage_Up_Top1_Individual_Metrics.tex")
+      if (os.path.exists(ssut1imLaTeXFile)):
+        with open(ssut1imLaTeXFile, "r") as f:
+          ssut1imLaTeX = f.read()
+      else:
+        ssut1imLaTeX = ""
+      ssut1imLaTeX = ssut1imLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      ssdt1imLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                      "Second_Stage_Down_Top1_Individual_Metrics.tex")
+      if (os.path.exists(ssdt1imLaTeXFile)):
+        with open(ssdt1imLaTeXFile, "r") as f:
+          ssdt1imLaTeX = f.read()
+      else:
+        ssdt1imLaTeX = ""
+      ssdt1imLaTeX = ssdt1imLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      fst1t1cmLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                       "First_Stage_Top1_Top1_Combinations_Metrics.tex")
+      if (os.path.exists(fst1t1cmLaTeXFile)):
+        with open(fst1t1cmLaTeXFile, "r") as f:
+          fst1t1cmLaTeX = f.read()
+      else:
+        fst1t1cmLaTeX = ""
+      fst1t1cmLaTeX = fst1t1cmLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t",
+                                                                                         "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      ssut1t1cmLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                        "Second_Stage_Up_Top1_Top1_Combinations_Metrics.tex")
+      if (os.path.exists(ssut1t1cmLaTeXFile)):
+        with open(ssut1t1cmLaTeXFile, "r") as f:
+          ssut1t1cmLaTeX = f.read()
+      else:
+        ssut1t1cmLaTeX = ""
+      ssut1t1cmLaTeX = ssut1t1cmLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t",
+                                                                                           "&nbsp;&nbsp;&nbsp;&nbsp;")
+
+      ssdt1t1cmLaTeXFile = os.path.join(classificationPath, folder, innerFolder, "LaTeX Results",
+                                        "Second_Stage_Down_Top1_Top1_Combinations_Metrics.tex")
+      if (os.path.exists(ssdt1t1cmLaTeXFile)):
+        with open(ssdt1t1cmLaTeXFile, "r") as f:
+          ssdt1t1cmLaTeX = f.read()
+      else:
+        ssdt1t1cmLaTeX = ""
+      ssdt1t1cmLaTeX = ssdt1t1cmLaTeX.replace(" ", "&nbsp;").replace("\n", "<br>").replace("\t",
+                                                                                           "&nbsp;&nbsp;&nbsp;&nbsp;")
+
       allFolders[folder][innerFolder] = {
         "Configurations"                                : {
           "Features File"        : configurations["Features File"],
@@ -1725,18 +1790,25 @@ def classificationNavigation():
         },
         "First_Stage_Individual_Metrics"                : fst1im.values.tolist(),
         "First_Stage_Individual_Metrics_Columns"        : list(fst1im.columns),
+        "First_Stage_Individual_Metrics_LaTeX"          : fst1imLaTeX,
         "Second_Stage_Up_Individual_Metrics"            : ssut1im.values.tolist(),
         "Second_Stage_Up_Individual_Metrics_Columns"    : list(ssut1im.columns),
+        "Second_Stage_Up_Individual_Metrics_LaTeX"      : ssut1imLaTeX,
         "Second_Stage_Down_Individual_Metrics"          : ssdt1im.values.tolist(),
         "Second_Stage_Down_Individual_Metrics_Columns"  : list(ssdt1im.columns),
+        "Second_Stage_Down_Individual_Metrics_LaTeX"    : ssdt1imLaTeX,
         "First_Stage_Combinations_Metrics"              : fst1t1cm.values.tolist(),
         "First_Stage_Combinations_Metrics_Columns"      : list(fst1t1cm.columns),
+        "First_Stage_Combinations_Metrics_LaTeX"        : fst1t1cmLaTeX,
         "Second_Stage_Up_Combinations_Metrics"          : ssut1t1cm.values.tolist(),
         "Second_Stage_Up_Combinations_Metrics_Columns"  : list(ssut1t1cm.columns),
+        "Second_Stage_Up_Combinations_Metrics_LaTeX"    : ssut1t1cmLaTeX,
         "Second_Stage_Down_Combinations_Metrics"        : ssdt1t1cm.values.tolist(),
         "Second_Stage_Down_Combinations_Metrics_Columns": list(ssdt1t1cm.columns),
+        "Second_Stage_Down_Combinations_Metrics_LaTeX"  : ssdt1t1cmLaTeX,
         "Final_Results"                                 : fr.values.tolist(),
         "Final_Results_Columns"                         : list(fr.columns),
+        "Final_Results_LaTeX"                           : frLaTeX,
       }
 
   return render_template(

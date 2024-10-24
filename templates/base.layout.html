@@ -20,14 +20,16 @@
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
-{% include 'loader.component.html' %}
-{% include 'navbar.component.html' %}
-<div class="pt-5">
-  {% block body %}{% endblock %}
-</div>
+  {% include 'loader.component.html' %}
+  {% include 'navbar.component.html' %}
+  <div class="pt-5">
+    {% block body %}{% endblock %}
+  </div>
 </main>
 {% include 'footer.component.html' %}
-<!-- Include Bootstrap and jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"
+        integrity="sha512-lvWiOP+aMKHllm4THsjzNleVuGOh0WGniJ3lgu/nvCbex1LlaQSxySUjAu/LTJw9FhnSL/PVYoQcckg1Q03+fQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
