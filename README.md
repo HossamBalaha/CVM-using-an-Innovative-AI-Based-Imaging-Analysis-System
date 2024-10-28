@@ -67,7 +67,7 @@ Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 
 <div style="text-align: center;" align="center">
     <a href="https://www.flickr.com/photos/133728225@N05/54018774350/in/album-72177720320572809" target="_blank">
-        <img src="https://live.staticflickr.com/65535/54018774350_34d053ed1f_o.jpg" width="50%" alt="R!L Awards_0497"/>
+        <img src="./static/images/54018774350_34d053ed1f_o.jpg" width="50%" alt="R!L Awards - HMB"/>
     </a>
 </div>
 
