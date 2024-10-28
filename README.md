@@ -2,7 +2,7 @@
 
 ## Publications and Authors
 
-### Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging Analysis System
+### [Research Article] Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging Analysis System
 
 **Authors**: **Hossam Magdy Balaha**<sup>1</sup>, Ahmed Alksas<sup>1</sup>, Amine Fattal<sup>2</sup>,
 Amir A. Sewelam<sup>3</sup>, Wael Aboelmaaty<sup>4,5</sup>, Khaled Abdel-Ghaffar<sup>6</sup>,
@@ -24,7 +24,7 @@ Egypt.
 * **DOI**: In Progress.
 * **Link**: In Progress.
 
-### Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging (24014)
+### [Patent] Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging (24014)
 
 **Patent**:  Balaha et al. filed a patent on `December 18th, 2023`, under the number `63/611,763`. The patent is
 currently in the `Filed` status, protecting our innovations in AI, medical imaging, and deep learning, as part of our
@@ -45,6 +45,31 @@ Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 * **IP Detailed Information**:
   <a href="https://louisville.flintbox.com/technologies/c5b0ad52-d8a0-42bc-9b74-1b70b3293840" target="_blank" rel="noopener">
   Click to Open</a>
+
+### [Poster] Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging
+
+**Poster**:  Balaha et al. won the second place in `Research!Louisville 2024` for the poster presentation titled
+`Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging` in the category
+of `Doctoral Engineering Student Award`.
+
+**Researchers**: **Hossam Magdy Balaha**<sup>1</sup>, Ahmed Alksas<sup>1</sup>, Amine Fattal<sup>2</sup>,
+Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
+
+<sup>1</sup> Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
+<br> <sup>2</sup> Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
+
+#### Poster Information
+
+* **Date**: September 16th through the 20th
+* **Detailed Information**:
+  <a href="https://www.uoflnews.com/post/uofltoday/researchlouisville-closes-with-update-on-overdose-crisis-and-awards-presentation/" target="_blank" rel="noopener">
+  Click to Open</a>
+
+<div style="text-align: center;" align="center">
+    <a href="https://www.flickr.com/photos/133728225@N05/54018774350/in/album-72177720320572809" target="_blank">
+        <img src="https://live.staticflickr.com/65535/54018774350_34d053ed1f_o.jpg" width="50%" alt="R!L Awards_0497"/>
+    </a>
+</div>
 
 ## Website Views
 
