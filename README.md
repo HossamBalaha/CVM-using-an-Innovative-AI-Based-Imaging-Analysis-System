@@ -243,7 +243,18 @@ To install the environment, follow these steps:
 If you find this project useful in your research or projects, please consider citing the following paper:
 
 ```bibtex
-In Progress
+@article{BALAHA2025107088,
+  title = {Cervical vertebral maturation assessment using an innovative artificial intelligence-based imaging analysis system},
+  journal = {Biomedical Signal Processing and Control},
+  volume = {100},
+  pages = {107088},
+  year = {2025},
+  issn = {1746-8094},
+  doi = {https://doi.org/10.1016/j.bspc.2024.107088},
+  url = {https://www.sciencedirect.com/science/article/pii/S1746809424011467},
+  author = {Hossam Magdy Balaha and Ahmed Alksas and Amine Fattal and Amir A. Sewelam and Wael Aboelmaaty and Khaled Abdel-Ghaffar and Toru Deguchi and Ayman El-Baz},
+  keywords = {Artificial Intelligence (AI), Computer-aided Design (CAD), Cervical Vertebral Maturation (CVM), Machine Learning (ML), Multi-level classification, Multi-stage classification},
+}
 ```
 
 This project was supported by the University of Louisville (J.B. Speed School of Engineering and School of
