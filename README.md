@@ -21,8 +21,8 @@ Egypt.
 
 * **Journal**: Biomedical Signal Processing and Control.
 * **Publisher**: Elsevier.
-* **DOI**: In Progress.
-* **Link**: In Progress.
+* **DOI**: https://doi.org/10.1016/j.bspc.2024.107088.
+* **Link**: [Click to Open](https://www.sciencedirect.com/science/article/pii/S1746809424000455).
 
 ### [Patent] Cervical Vertebral Maturation Assessment using an Innovative Artificial Intelligence-Based Imaging (24014)
 
@@ -58,16 +58,25 @@ Toru Deguchi<sup>2</sup>, and Ayman El-Baz<sup>1</sup>.
 <sup>1</sup> Bioengineering Department, J.B. Speed School of Engineering, University of Louisville, Louisville, KY, USA.
 <br> <sup>2</sup> Department of Orthodontics, School of Dentistry, University of Louisville, Louisville, KY, USA.
 
+<div style="text-align: center;" align="center">
+    <a href="./static/images/CVM_Balaha_300DPI.jpg" target="_blank">
+        <img src="./static/images/CVM_Balaha_300DPI.jpg" width="75%" alt="R!L 2024 Poster - HMB"/>
+    </a>
+</div>
+
 #### Poster Information
 
 * **Date**: September 16th through the 20th
+* **Event**: Research!Louisville 2024
+* **Award**: Second Place
+* **Category**: Doctoral Engineering Student Award
 * **Detailed Information**:
   <a href="https://www.uoflnews.com/post/uofltoday/researchlouisville-closes-with-update-on-overdose-crisis-and-awards-presentation/" target="_blank" rel="noopener">
   Click to Open</a>
 
 <div style="text-align: center;" align="center">
     <a href="https://www.flickr.com/photos/133728225@N05/54018774350/in/album-72177720320572809" target="_blank">
-        <img src="./static/images/54018774350_34d053ed1f_o.jpg" width="50%" alt="R!L Awards - HMB"/>
+        <img src="./static/images/54018774350_34d053ed1f_o.jpg" width="50%" alt="R!L 2024 Awards - HMB"/>
     </a>
 </div>
 
